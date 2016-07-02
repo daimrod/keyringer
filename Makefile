@@ -87,3 +87,5 @@ web:
 
 web_deploy:
 	@rsync -avz --delete www/ blog:/var/sites/keyringer/www/
+
+publish: web web_deploy
