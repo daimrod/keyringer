@@ -28,8 +28,8 @@ use IkiWiki::Setup::Standard {
 
   # Git stuff.
   rcs => "git",
-  historyurl => "https://git.fluxo.info/?p=keyringer.git;a=history;f=[[file]]",
-  diffurl => "https://git.fluxo.info/?p=keyringer.git;a=blobdiff;h=[[sha1_to]];hp=[[sha1_from]];hb=[[sha1_parent]];f=[[file]]",
+  historyurl => "https://git.fluxo.info/keyringer/log/[[file]]",
+  diffurl => 'https://git.fluxo.info/keyringer/commit/[[file]]?id=[[sha1_commit]]',
   #gitorigin_branch => "origin",
   #gitmaster_branch => "master",
   # See https://ikiwiki.info/tips/laptop_wiki_with_git/
