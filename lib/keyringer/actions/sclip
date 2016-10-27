@@ -11,6 +11,11 @@ source "$LIB" || exit 1
 shift
 keyringer $KEYRING xclip $*
 
+# Move to the next window
+if which xdotool &> /dev/null; then
+  xdotool key alt+Tab
+fi
+
 # Sleep
 sleep 5
 
