@@ -47,8 +47,7 @@ Build the package from the debian Git branch:
 
 Run lintian (or [add it to your pbuilder hooks](http://askubuntu.com/questions/140697/how-do-i-run-lintian-from-pbuilder-dist)):
 
-    lintian --info --display-info --pedantic --color auto \
-     ../build-area/keyringer_$VERSION*.changes
+    lintian --info --display-info --pedantic --color auto build-area/keyringer_$VERSION*.changes
 
 Then go back to the develop branch:
 
