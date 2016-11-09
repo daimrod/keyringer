@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+#
+# Decrypt secret header to clipboard, sleep and cleanup.
+#
+
+# Load functions
+LIB="`dirname $0`/../functions"
+source "$LIB" || exit 1
+
+# Clip password
+shift
+keyringer $KEYRING xclip $*
+
+# Move to the next window
+if which xdotool &> /dev/null; then
+  xdotool key alt+Tab
+fi
+
+# Sleep
+sleep 5
+
+# Overwrite clipboard
+cat $RANDOM | sha256sum | base64 -d | xclip

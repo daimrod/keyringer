@@ -7,7 +7,7 @@ commands to encrypt, decrypt, recrypt, create key pairs, etc.
 - Manpage: [keyringer.1](share/man/keyringer.1)
 - License: [GPLv3+](LICENSE)
 - Issue tracker: [https://keyringer.pw/trac](https://keyringer.pw/trac)
-- Tor hidden service: [http://wewbqck6m3ffkn44.onion](http://wewbqck6m3ffkn44.onion)
+- Tor hidden service: [http://4qt45wbulqipigwa.onion](http://4qt45wbulqipigwa.onion)
 - Releases: [https://keyringer.pw/releases](releases)
 - Contact: rhatto at riseup.net
 
@@ -21,12 +21,12 @@ Installation
 
 Just clone
 
-    git clone git://git.sarava.org/keyringer.git
+    git clone https//git.fluxo.info/keyringer
 
 And then leave it somewhere, optionally adding it to your `$PATH` environment variable
 or package it to your preferred distro.
 
-If you're using Debian `jessie` or `unstable`, just run
+If you're using Debian `jessie` or newer, just run
 
     apt-get install keyringer
 

@@ -1,3 +1,19 @@
+2016-11-09 - 0.4.0 - Silvio Rhatto <rhatto@riseup.net>
+
+	Adopts Semantic Versioning
+
+	Do not rely on git-flow
+
+	Adds sclip action
+
+	Ensure destination path exists at mv action
+
+	Allow @ at file names
+
+	Slightly more interactive keyringer_get_file
+
+	Updates URLs and static site generation.
+
 2015-03-30 - 0.3.8 - Silvio Rhatto <rhatto@riseup.net>
 
 	Eliminates hardcoded bash path, reported and fixed by
