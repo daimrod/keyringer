@@ -1,7 +1,7 @@
-.TH KEYRINGER 1 "Oct 25, 2013" "Keyringer User Manual"
+.TH "KEYRINGER" "1" "Oct 25, 2013" "Keyringer User Manual" ""
 .SH NAME
 .PP
-keyringer - encrypted and distributed secret sharing software
+keyringer \- encrypted and distributed secret sharing software
 .SH SYNOPSIS
 .PP
 keyringer <\f[I]keyring\f[]> <\f[I]action\f[]> [\f[I]options\f[]]...
@@ -10,8 +10,8 @@ keyringer <\f[I]keyring\f[]> <\f[I]action\f[]> [\f[I]options\f[]]...
 Keyringer lets you manage and share secrets using GnuPG and Git in a
 distributed fashion.
 .PP
-It has custom commands to create key-pairs and to encrypt, decrypt and
-re-encrypt secrets.
+It has custom commands to create key\-pairs and to encrypt, decrypt and
+re\-encrypt secrets.
 It also supports encryption to multiple recipients and groups of
 recipients, to allow a workgroup to share access to a single repository
 while restricting some secrets to subsets of the group.
@@ -87,14 +87,14 @@ Remove an empty folder inside the repository \f[I]keys\f[] folder.
 .TP
 .B tree <\f[I]path\f[]>
 List contents from the toplevel repository \f[I]keys\f[] folder or from
-relative paths if \f[I]path\f[] is specified using a tree-like format.
+relative paths if \f[I]path\f[] is specified using a tree\-like format.
 Like the ls wrapper, this is a wrapper around the \f[I]TREE(1)\f[]
 command.
 .RS
 .RE
 .TP
 .B shell
-Run keyringer on interactive mode from a built-in command-line prompt
+Run keyringer on interactive mode from a built\-in command\-line prompt
 where all other actions can be called and are operated from the current
 selected keyring.
 .RS
@@ -138,7 +138,7 @@ read from the standard input and encrypting again.
 .RS
 .RE
 .TP
-.B append-batch <\f[I]secret\f[]>
+.B append\-batch <\f[I]secret\f[]>
 Append contents into a secret, batch mode.
 .RS
 .RE
@@ -177,11 +177,11 @@ Rename a secret.
 .B edit <\f[I]secret\f[]>
 Edit a secret by temporarily decrypting it, opening the decrypted copy
 into the text editor defined by the \f[I]$EDITOR\f[] environment
-variable and then re-encrypting it.
+variable and then re\-encrypting it.
 .RS
 .PP
 Please make sure to use an
-\f[I]\f[I]E\f[]\f[I]D\f[]\f[I]I\f[]\f[I]T\f[]\f[I]O\f[]\f[I]R\f[] * \f[I]w\f[]\f[I]h\f[]\f[I]i\f[]\f[I]c\f[]\f[I]h\f[]\f[I]d\f[]\f[I]o\f[]\f[I]e\f[]\f[I]s\f[]\f[I]n\f[]\f[I]o\f[]\f[I]t\f[]\f[I]l\f[]\f[I]e\f[]\f[I]a\f[]\f[I]k\f[]\f[I]d\f[]\f[I]a\f[]\f[I]t\f[]\f[I]a\f[]\f[I]l\f[]\f[I]i\f[]\f[I]k\f[]\f[I]e\f[]\f[I]h\f[]\f[I]i\f[]\f[I]s\f[]\f[I]t\f[]\f[I]o\f[]\f[I]r\f[]\f[I]y\f[]\f[I]b\f[]\f[I]u\f[]\f[I]f\f[]\f[I]f\f[]\f[I]e\f[]\f[I]r\f[]\f[I]s\f[]. \f[I]K\f[]\f[I]e\f[]\f[I]y\f[]\f[I]r\f[]\f[I]i\f[]\f[I]n\f[]\f[I]g\f[]\f[I]e\f[]\f[I]r\f[]\f[I]t\f[]\f[I]r\f[]\f[I]i\f[]\f[I]e\f[]\f[I]s\f[]\f[I]t\f[]\f[I]o\f[]\f[I]d\f[]\f[I]e\f[]\f[I]t\f[]\f[I]e\f[]\f[I]c\f[]\f[I]t\f[]\f[I]i\f[]\f[I]f\f[] * EDITOR\f[]
+\f[I]\f[I]E\f[]\f[I]D\f[]\f[I]I\f[]\f[I]T\f[]\f[I]O\f[]\f[I]R\f[] * \f[I]w\f[]\f[I]h\f[]\f[I]i\f[]\f[I]c\f[]\f[I]h\f[]\f[I]d\f[]\f[I]o\f[]\f[I]e\f[]\f[I]s\f[]\f[I]n\f[]\f[I]o\f[]\f[I]t\f[]\f[I]l\f[]\f[I]e\f[]\f[I]a\f[]\f[I]k\f[]\f[I]d\f[]\f[I]a\f[]\f[I]t\f[]\f[I]a\f[]\f[I]l\f[]\f[I]i\f[]\f[I]k\f[]\f[I]e\f[]\f[I]h\f[]\f[I]i\f[]\f[I]s\f[]\f[I]t\f[]\f[I]o\f[]\f[I]r\f[]\f[I]y\f[]\f[I]b\f[]\f[I]u\f[]\f[I]f\f[]\f[I]f\f[]\f[I]e\f[]\f[I]r\f[]\f[I]s\f[].\f[I]K\f[]\f[I]e\f[]\f[I]y\f[]\f[I]r\f[]\f[I]i\f[]\f[I]n\f[]\f[I]g\f[]\f[I]e\f[]\f[I]r\f[]\f[I]t\f[]\f[I]r\f[]\f[I]i\f[]\f[I]e\f[]\f[I]s\f[]\f[I]t\f[]\f[I]o\f[]\f[I]d\f[]\f[I]e\f[]\f[I]t\f[]\f[I]e\f[]\f[I]c\f[]\f[I]t\f[]\f[I]i\f[]\f[I]f\f[] * EDITOR\f[]
 is set to VIM and disables the \f[I]\&.viminfo\f[] file.
 .RE
 .TP
@@ -194,30 +194,26 @@ encrypt all it\[aq]s contents.
 .RS
 .RE
 .TP
-.B encrypt-batch <\f[I]secret\f[]> [\f[I]file\f[]]
+.B encrypt\-batch <\f[I]secret\f[]> [\f[I]file\f[]]
 Encrypt content, batch mode.
 Behavior is identical to \f[I]encrypt\f[] action, but less verbose.
 Useful inside scripts.
 .RS
 .RE
 .TP
-.B genkeys
-<\f[I]ssh\f[]|\f[I]gpg\f[]|\f[I]x509\f[]|\f[I]x509-self\f[]|\f[I]ssl\f[]|\f[I]ssl-self\f[]>
-[\f[I]options\f[]]
-Wrapper to generate encryption key-pairs, useful for automated key
+.B genkeys <\f[I]ssh\f[]|\f[I]gpg\f[]|\f[I]x509\f[]|\f[I]x509\-self\f[]|\f[I]ssl\f[]|\f[I]ssl\-self\f[]> [\f[I]options\f[]]
+Wrapper to generate encryption key\-pairs, useful for automated key
 deployment.
 .RS
 .RE
 .TP
-.B genpair
-<\f[I]ssh\f[]|\f[I]gpg\f[]|\f[I]x509\f[]|\f[I]x509-self\f[]|\f[I]ssl\f[]|\f[I]ssl-self\f[]>
-[\f[I]options\f[]]
+.B genpair <\f[I]ssh\f[]|\f[I]gpg\f[]|\f[I]x509\f[]|\f[I]x509\-self\f[]|\f[I]ssl\f[]|\f[I]ssl\-self\f[]> [\f[I]options\f[]]
 Alias for \f[I]genkeys\f[] action.
 .RS
 .RE
 .TP
 .B open <\f[I]secret\f[]>
-Decrypt a secret into a temporary folder and open it using xdg-open,
+Decrypt a secret into a temporary folder and open it using xdg\-open,
 which tries to figure out the file type and then calls the associated
 application.
 .RS
@@ -227,16 +223,16 @@ file again into the secret file and deletes the temporary file.
 .RE
 .TP
 .B recrypt <\f[I]secret\f[]>
-Re-encrypts a secret by decrypting it and encrypting it again.
+Re\-encrypts a secret by decrypting it and encrypting it again.
 Useful when users are added into the recipient configuration.
 If no \f[I]secret\f[] is given, all secrets in the repository are
-re-encrypted.
+re\-encrypted.
 .RS
 .RE
 .TP
 .B clip <\f[I]secret\f[]>
 Copy the first line of a secret to the clipboard, following
-password-store convention.
+password\-store convention.
 .RS
 .RE
 .TP
@@ -287,7 +283,7 @@ Alias for usage action.
 .RS
 .RE
 .TP
-.B recipients <\f[I]ls\f[]|\f[I]edit\f[]> <\f[I]recipients-file\f[]>
+.B recipients <\f[I]ls\f[]|\f[I]edit\f[]> <\f[I]recipients\-file\f[]>
 List, create or edit recipients configuration.
 .RS
 .PP
@@ -296,13 +292,13 @@ used by keyringer when encrypting secrets and associated with email
 aliases.
 .PP
 Keyringer uses a default recipients file, but specifying a custom
-\f[I]recipients-file\f[] pathname will override this default.
+\f[I]recipients\-file\f[] pathname will override this default.
 .PP
 For instance, if a user encrypts a secret to a file in the keyring
-repository\[aq]s \f[I]accounting\f[] folder, a \f[I]recipients-file\f[]
+repository\[aq]s \f[I]accounting\f[] folder, a \f[I]recipients\-file\f[]
 under \f[I]accounting\f[] will be used.
-Encrypting a secret into \f[I]accounting/bank-accounts\f[] will result
-in a file \f[C]$KEYRING_FOLDER/keys/accounting/bank-accounts.asc\f[]
+Encrypting a secret into \f[I]accounting/bank\-accounts\f[] will result
+in a file \f[C]$KEYRING_FOLDER/keys/accounting/bank\-accounts.asc\f[]
 encrypted using the public keys listed in the config
 file\f[C]$KEYRING_FOLDER/config/recipients/accounting\f[].
 .PP
@@ -328,7 +324,7 @@ Create or edit a recipients file.
 Editing happens using the editor specified by the \f[C]$EDITOR\f[]
 environment variable.
 .PP
-The required parameter \f[I]recipients-file\f[] is interpreted relative
+The required parameter \f[I]recipients\-file\f[] is interpreted relative
 to the \f[C]$KEYRING_FOLDER/config/recipients/\f[] folder.
 .RE
 .RE
@@ -350,11 +346,11 @@ Metadata is not encrypted, meaning that an attacker with access to a
 keyringer repository can discover all public key IDs used for
 encryption, and which secrets are encrypted to which keys.
 This can be improved in the future by encrypting the repository
-configuration with support for the \f[I]\-\-hidden-recipient\f[] GnuPG
+configuration with support for the \f[I]\-\-hidden\-recipient\f[] GnuPG
 option and encrypted repository options.
 .PP
 To mitigate that, it\[aq]s possible to keep the repo just atop of an
-encrypted and non-public place.
+encrypted and non\-public place.
 .IP "2." 3
 History is not rewritten by default when secrets are removed from a
 keyringer repository.

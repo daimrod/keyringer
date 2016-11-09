@@ -64,8 +64,9 @@ release:
 	#     https://github.com/nvie/gitflow/pull/160
 	#     https://github.com/nvie/gitflow/issues/50
 	#git flow release finish -s -m "Keyringer $(VERSION)" $(VERSION)
-	git flow release finish -s $(VERSION)
+	#git flow release finish -s $(VERSION)
 	git checkout master
+	git merge develop
 	@make tarball
 	gpg --use-agent --armor --detach-sign --output $(ARCHIVE)/keyringer-$(VERSION).tar.bz2.asc $(ARCHIVE)/keyringer-$(VERSION).tar.bz2
 	scp $(ARCHIVE)/keyringer-$(VERSION).tar.bz2* keyringer:/var/sites/keyringer/releases/

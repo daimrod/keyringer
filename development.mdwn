@@ -8,20 +8,16 @@ Index
 Coding standards
 ----------------
 
+* Uses Semantic Versioning.
 * Respect the existing coding style.
 * Be clear: easy audability must be one of keyringer's requirements.
-
-Development workflow
---------------------
-
-We use [git-flow](https://github.com/nvie/gitflow) for the development workflow.
 
 Release workflow
 ----------------
 
 Go to develop branch and start a new release
 
-    git flow release start VERSION
+    git checkout develop
 
 Prepare the source code:
 
@@ -32,6 +28,10 @@ Prepare the source code:
 Create and upload a new release:
 
     make release
+
+Tag the release:
+
+    git tag -s $(VERSION) -m "Keyringer $(VERSION)"
 
 Update the debian branch:
 
