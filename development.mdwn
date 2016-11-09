@@ -31,7 +31,7 @@ Create and upload a new release:
 
 Tag the release:
 
-    git tag -s $(VERSION) -m "Keyringer $(VERSION)"
+    git tag -s $VERSION -m "Keyringer $VERSION"
 
 Update the debian branch:
 
