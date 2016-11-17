@@ -49,9 +49,10 @@ Run lintian (or [add it to your pbuilder hooks](http://askubuntu.com/questions/1
 
     lintian --info --display-info --pedantic --color auto build-area/keyringer_$VERSION*.changes
 
-Then go back to the develop branch:
+Then go back to the develop branch and push everything:
 
     git checkout develop
+    git push --all
 
 Cleanup symlink:
 
