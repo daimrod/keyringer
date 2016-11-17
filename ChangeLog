@@ -1,3 +1,11 @@
+2016-11-17 - 0.4.1 - Silvio Rhatto <rhatto@riseup.net>
+
+	Adds sclip into completions
+
+	Manpage: sclip action
+
+	Updates develop docs
+
 2016-11-09 - 0.4.0 - Silvio Rhatto <rhatto@riseup.net>
 
 	Adopts Semantic Versioning
@@ -12,12 +20,12 @@
 
 	Slightly more interactive keyringer_get_file
 
-	Updates URLs and static site generation.
+	Updates URLs and static site generation
 
 2015-03-30 - 0.3.8 - Silvio Rhatto <rhatto@riseup.net>
 
 	Eliminates hardcoded bash path, reported and fixed by
-	polynomial (closes https://github.com/rhatto/keyringer/pull/1).
+	polynomial (closes https://github.com/rhatto/keyringer/pull/1)
 
 	Rename genpair action and option (#69)
 
