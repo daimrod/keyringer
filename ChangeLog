@@ -1,3 +1,11 @@
+2016-11-17 - 0.4.1 - Silvio Rhatto <rhatto@riseup.net>
+
+	Adds sclip into completions
+
+	Manpage: sclip action
+
+	Updates develop docs
+
 2016-11-09 - 0.4.0 - Silvio Rhatto <rhatto@riseup.net>
 
 	Adopts Semantic Versioning
