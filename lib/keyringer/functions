@@ -728,7 +728,6 @@ function keyringer_check_expiration {
 
     if [[ -z "$expiry" ]]; then
       not_expired=1
-      break
     fi
 
     if [[ "$seconds" -lt "$expiry" ]]; then
@@ -737,7 +736,6 @@ function keyringer_check_expiration {
       if [[ "$ahead" -gt "$expiry" ]] && [ "$BASENAME" == "check" ]; then
         echo "Warning: subkey from $recipient will expire soon, on `date --date="@$expiry"`"
       fi
-      break
     fi
   done
 
