@@ -703,7 +703,7 @@ function keyringer_check_expiration {
   seconds="`date +%s`"
 
   # Check the main key
-  expiry="`gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^pub | cut -d : -f 7`"
+  expiry="`gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^pub | head -n1 | cut -d : -f 7`"
 
   # TODO: Time to expire can be configured via repository options.
   ahead="$((86400 * 30 + $seconds))"
