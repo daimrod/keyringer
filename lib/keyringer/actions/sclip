@@ -11,13 +11,18 @@ source "$LIB" || exit 1
 shift
 keyringer $KEYRING xclip $*
 
+# Se window switch combo
+if [ -z "$XDOTOOL_NEXT_WINDOW" ]; then
+  XDOTOOL_NEXT_WINDOW="alt+Tab"
+fi
+
 # Move to the next window
 if which xdotool &> /dev/null; then
-  xdotool key alt+Tab
+  xdotool key $XDOTOOL_NEXT_WINDOW
 fi
 
 # Sleep
 sleep 5
 
 # Overwrite clipboard
-cat $RANDOM | sha256sum | base64 -d | xclip
+echo $RANDOM | sha256sum | base64 -d | xclip
