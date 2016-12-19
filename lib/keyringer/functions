@@ -725,10 +725,12 @@ function keyringer_check_expiration {
   local subkey=""
   for subkey in $(gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^sub); do
     local expiry=$(cut -d : -f 7 <<< "$subkey")
+
     if [[ -z "$expiry" ]]; then
-	not_expired=1
-	break
+      not_expired=1
+      break
     fi
+
     if [[ "$seconds" -lt "$expiry" ]]; then
       not_expired="1"
 
