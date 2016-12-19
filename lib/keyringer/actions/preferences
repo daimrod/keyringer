@@ -30,7 +30,7 @@ fi
 if [ "$COMMAND" == "ls" ]; then
   cat "$PREFERENCES"
 elif [ "$COMMAND" == "edit" ]; then
-  "$EDITOR" "$PREFERENCES"
+  $EDITOR "$PREFERENCES"
 elif [ "$COMMAND" == "add" ]; then
   shift 2
   [[ -n $* ]] && echo $* >> "$PREFERENCES"
