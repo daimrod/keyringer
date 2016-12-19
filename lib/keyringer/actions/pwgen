@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+#
+# Generates passphrases.
+#
+
+# Load functions
+LIB="`dirname $0`/../functions"
+source "$LIB" || exit 1
+
+# Parameters
+SIZE="$3"
+FILE="$2"
+
+# Generates a random passphrase
+function keyringer_pwgen {
+  ENTROPY_BYTES=${1:-20} # in bytes
+  ENTROPY_SOURCE="${ENTROPY_SOURCE:-/dev/urandom}"
+
+  # Strip possible newlines if output is wrapped.
+  # Also strip trailing = signs as they add nothing to the password's entropy.
+  head -c $ENTROPY_BYTES $ENTROPY_SOURCE | base64 | tr -d '\n='
+  echo
+}
+
+# Check
+if [ -z "$FILE" ]; then
+  echo "Usage: keyringer <keyring> $BASENAME <secret> [size]"
+  exit 1
+elif [ ! -z "$SIZE" ] && ! echo $SIZE | egrep -q '^[0-9]+$'; then
+  echo "$SIZE is not a number"
+  exit 1
+fi
+
+# Encrypt and store a randomly-generated secret
+keyringer_pwgen $SIZE | keyringer_exec encrypt "$BASEDIR" "$FILE"
