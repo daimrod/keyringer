@@ -1,4 +1,4 @@
-2016-12-18 - unreleased - Silvio Rhatto <rhatto@riseup.net>
+2016-12-21 - 0.5.0 - Silvio Rhatto <rhatto@riseup.net>
 
 	Fixes keyringer_check_expiration failure if a public key is listed multiple
 	times (#77 and Debian #847964)
