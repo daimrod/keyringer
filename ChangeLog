@@ -1,3 +1,17 @@
+2016-12-21 - 0.5.0 - Silvio Rhatto <rhatto@riseup.net>
+
+	Fixes keyringer_check_expiration failure if a public key is listed multiple
+	times (#77 and Debian #847964)
+
+	Make keyringer_check_expiration not fail on subkeys which do not have an
+	expiration date (#76 and Debian #847963)
+
+	Adds pwgen action
+
+	Fixes sclip clipboard overwrite procedure
+
+	Adds XDOTOOL_NEXT_WINDOW config into sclip
+
 2016-11-17 - 0.4.1 - Silvio Rhatto <rhatto@riseup.net>
 
 	Adds sclip into completions

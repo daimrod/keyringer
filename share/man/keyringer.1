@@ -222,6 +222,20 @@ After the application exits, keyringer encrypts the temporary decrypted
 file again into the secret file and deletes the temporary file.
 .RE
 .TP
+.B pwgen <\f[I]secret\f[]> [\f[I]size\f[]]
+Generates a random passphrase and stores into \f[I]secret\f[] pathname
+with optional entropy size in bytes.
+Default size is 20.
+.RS
+.PP
+Passphrases will be slightly bigger than size due to base64 conversion.
+.PP
+With this action you can generate and store a passphrase without need to
+see it.
+Combined with clip or sclip action provides an hygienic way to handle
+secrets.
+.RE
+.TP
 .B recrypt <\f[I]secret\f[]>
 Re\-encrypts a secret by decrypting it and encrypting it again.
 Useful when users are added into the recipient configuration.

@@ -703,7 +703,7 @@ function keyringer_check_expiration {
   seconds="`date +%s`"
 
   # Check the main key
-  expiry="`gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^pub | cut -d : -f 7`"
+  expiry="`gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^pub | head -n1 | cut -d : -f 7`"
 
   # TODO: Time to expire can be configured via repository options.
   ahead="$((86400 * 30 + $seconds))"
@@ -722,8 +722,14 @@ function keyringer_check_expiration {
   fi
 
   # Check the subkeys
-  expiry=""
-  for expiry in `gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^sub | cut -d : -f 7`; do
+  local subkey=""
+  for subkey in $(gpg --with-colons --fixed-list-mode --list-keys "$recipient" | grep ^sub); do
+    local expiry=$(cut -d : -f 7 <<< "$subkey")
+
+    if [[ -z "$expiry" ]]; then
+      not_expired=1
+    fi
+
     if [[ "$seconds" -lt "$expiry" ]]; then
       not_expired="1"
 
@@ -734,7 +740,7 @@ function keyringer_check_expiration {
   done
 
   # All subkeys are expired
-  if [ ! -z "$expiry" ] && [ "$not_expired" != "1" ]; then
+  if [ ! -z "$subkey" ] && [ "$not_expired" != "1" ]; then
     echo "Fatal: key $recipient has no keys suitable for encryption: all subkeys expired."
     exit 1
   fi

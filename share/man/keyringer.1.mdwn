@@ -163,6 +163,16 @@ open <*secret*>
     After the application exits, keyringer encrypts the temporary decrypted file
     again into the secret file and deletes the temporary file.
 
+pwgen <*secret*> [*size*]
+:    Generates a random passphrase and stores into *secret* pathname with optional
+     entropy size in bytes. Default size is 20.
+
+     Passphrases will be slightly bigger than size due to base64 conversion.
+
+     With this action you can generate and store a passphrase without need to see
+     it. Combined with clip or sclip action provides an hygienic way to handle
+     secrets.
+
 recrypt <*secret*>
 :   Re-encrypts a secret by decrypting it and encrypting it again. Useful when users are added
     into the recipient configuration. If no *secret* is given, all secrets in the repository
