@@ -1,3 +1,7 @@
+2017-01-15 - develop - Silvio Rhatto <rhatto@riseup.net>
+
+	Adds "delete" alias to "del" action.
+
 2016-12-21 - 0.5.0 - Silvio Rhatto <rhatto@riseup.net>
 
 	Fixes keyringer_check_expiration failure if a public key is listed multiple

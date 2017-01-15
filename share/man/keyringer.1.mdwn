@@ -125,6 +125,9 @@ del <*secret*>
     To completely remove a file from a keyring, you should also rewrite the Git
     history yourself.
 
+delete <*secret*>
+:   Alias for *del* action.
+
 rm <*secret*>
 :   Alias for *del* action.
 
