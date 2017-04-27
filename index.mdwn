@@ -23,10 +23,17 @@ Just clone
 
     git clone https://git.fluxo.info/keyringer
 
-And then leave it somewhere, optionally adding it to your `$PATH` environment variable
+You can also verify the latest commit's OpenPGP signature:
+
+    /usr/bin/git -C kvmx verify-commit HEAD
+
+Note that `/usr/bin/git` is called to avoid any other `git` wrappers or aliases
+you might have available on your shell.
+
+You can also add the `keyringer` script into your `$PATH` environment variable
 or package it to your preferred distro.
 
-If you're using Debian `jessie` or newer, just run
+If you're using Debian `stable` or newer, just run
 
     apt-get install keyringer
 
