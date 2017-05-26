@@ -38,7 +38,7 @@ clip() {
 
 # Load functions
 LIB="`dirname $0`/../functions"
-source "$LIB" || exit 1
+source "$LIB" read $* || exit 1
 
 # Check for xclip
 if ! which xclip &> /dev/null; then

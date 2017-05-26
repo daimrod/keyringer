@@ -5,7 +5,7 @@
 
 # Load functions
 LIB="`dirname $0`/../functions"
-source "$LIB" || exit 1
+source "$LIB" read $* || exit 1
 
 # Clip password
 shift

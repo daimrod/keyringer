@@ -15,7 +15,7 @@
 
 # Load functions
 LIB="`dirname $0`/../functions"
-source "$LIB" || exit 1
+source "$LIB" maintenance $* || exit 1
 
 # The following should run automatically from keyringer_check_recipients
 # and keyringer_check_repository:

@@ -253,10 +253,18 @@ function keyringer_set_env {
     exit 1
   fi
 
+  # The first argument tells what the action plans to do with the
+  # keyring database: either read, write, readwrite or maintenance.
+  if [ "$1" != "read" ] && [ "$1" != "write" ] && [ "$1" != "readwrite" ] && [ "$1" != "maintenance" ]; then
+    echo "Error: first keyringer_set_env argument must be either read, write or readwrite"
+    exit 1
+  fi
+
   ACTIONS="`dirname $0`"
   BASENAME="`basename $0`"
-  BASEDIR="$1"
-  SUBCOMMAND="$2"
+  KEYRINGER_MODE="$1"
+  BASEDIR="$2"
+  SUBCOMMAND="$3"
   KEYDIR="$BASEDIR/keys"
   RECIPIENTS_BASE="config/recipients"
   RECIPIENTS="$BASEDIR/$RECIPIENTS_BASE"
@@ -640,10 +648,10 @@ function keyringer_check_recipients {
     sed -i -e 's/ XXXXXXXX$/ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/' "$RECIPIENTS"/*
   fi
 
-  if [ "$1" == "edit" ]; then
-    # Don't do the other checks at edit mode.
-    return
-  fi
+  #if [ "$1" == "edit" ]; then
+  #  # Don't do the other checks at edit mode.
+  #  return
+  #fi
 
   for recipient in $(cat "$RECIPIENTS"/* | grep -v '^#' | awk '{ print $2 }'); do
     # Process a recipient just once
@@ -710,8 +718,15 @@ function keyringer_check_expiration {
 
   # Check if key is expired
   if [ ! -z "$expiry" ] && [[ "$seconds" -gt "$expiry" ]]; then
-    echo "Fatal: primary key for $recipient expired on `date --date="@$expiry"`"
-    exit 1
+    echo -n "Warning: primary key for $recipient expired on `date --date="@$expiry"`"
+
+    if [ "$KEYRINGER_MODE" == "write" ] || [ "$KEYRINGER_MODE" == "readwrite" ]; then
+      echo ", aborting."
+      exit 1
+    fi
+
+    echo ""
+    return 1
   fi
 
   # Check if key is about to expire
@@ -741,8 +756,15 @@ function keyringer_check_expiration {
 
   # All subkeys are expired
   if [ ! -z "$subkey" ] && [ "$not_expired" != "1" ]; then
-    echo "Fatal: key $recipient has no keys suitable for encryption: all subkeys expired."
-    exit 1
+    echo -n "Warning: key $recipient has no keys suitable for encryption: all subkeys expired."
+
+    if [ "$KEYRINGER_MODE" == "write" ] || [ "$KEYRINGER_MODE" == "readwrite" ]; then
+      echo ", aborting."
+      exit 1
+    fi
+
+    echo ""
+    return 1
   fi
 }
 

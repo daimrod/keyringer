@@ -185,7 +185,7 @@ EOF
 
 # Load functions
 LIB="`dirname $0`/../functions"
-source "$LIB" || exit 1
+source "$LIB" write $* || exit 1
 
 # Aditional parameters
 KEYTYPE="$2"

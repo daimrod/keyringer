@@ -1,3 +1,8 @@
+2017-05-26 - develop - Silvio Rhatto <rhatto@riseup.net>
+
+	Do not abort when keys are expired on actions that are
+	not supposed to write in the database (#72)
+
 2017-01-15 - develop - Silvio Rhatto <rhatto@riseup.net>
 
 	Adds "delete" alias to "del" action.

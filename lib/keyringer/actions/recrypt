@@ -5,7 +5,7 @@
 
 # Load functions
 LIB="`dirname $0`/../functions"
-source "$LIB" || exit 1
+source "$LIB" readwrite $* || exit 1
 
 # Recrypt a single secret
 function keyringer_recrypt {
