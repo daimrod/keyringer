@@ -25,7 +25,7 @@ Just clone
 
 You can also verify the latest commit's OpenPGP signature:
 
-    /usr/bin/git -C kvmx verify-commit HEAD
+    /usr/bin/git -C keyringer verify-commit HEAD
 
 Note that `/usr/bin/git` is called to avoid any other `git` wrappers or aliases
 you might have available on your shell.
