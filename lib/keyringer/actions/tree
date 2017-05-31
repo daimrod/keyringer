@@ -10,7 +10,7 @@ function keyringer_tree {
 
 # Load functions
 LIB="`dirname $0`/../functions"
-source "$LIB" || exit 1
+source "$LIB" maintenance $* || exit 1
 
 # Aditional parameters
 CWD="`pwd`"

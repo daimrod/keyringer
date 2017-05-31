@@ -125,6 +125,9 @@ del <*secret*>
     To completely remove a file from a keyring, you should also rewrite the Git
     history yourself.
 
+delete <*secret*>
+:   Alias for *del* action.
+
 rm <*secret*>
 :   Alias for *del* action.
 
@@ -186,7 +189,7 @@ xclip <*secret*>
 
 sclip <*secret*>
 :   Same as clip action, but sleeps five seconds, overwrite clipboard and exit. If xdotool
-    is available, it also switchs to the next window using the alt+Tab shortcut. This action
+    is available, it also switches to the next window using the alt+Tab shortcut. This action
     is useful to be invoked by a custom key combo in a window manager so it becomes easy to
     provide keyringer managed passphrases to other applications such as a web browser.
 

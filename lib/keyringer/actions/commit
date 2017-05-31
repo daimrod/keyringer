@@ -5,7 +5,7 @@
 
 # Load functions
 LIB="`dirname $0`/../functions"
-source "$LIB" || exit 1
+source "$LIB" maintenance $* || exit 1
 
 # Fix positional arguments
 shift

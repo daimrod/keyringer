@@ -1,3 +1,10 @@
+2017-05-31 - 0.5.1 - Silvio Rhatto <rhatto@riseup.net>
+
+	Do not abort when keys are expired on actions that are
+	not supposed to write in the database (#72)
+
+	Adds "delete" alias to "del" action.
+
 2016-12-21 - 0.5.0 - Silvio Rhatto <rhatto@riseup.net>
 
 	Fixes keyringer_check_expiration failure if a public key is listed multiple
