@@ -81,7 +81,7 @@ debian:
 	# Fine tune debian/changelog prepared by git-dch
 	dch -e
 	git commit -a -m "Updating debian/changelog"
-	git-buildpackage --git-tag-only --git-sign-tags
+	gbp buildpackage --git-tag-only --git-sign-tags
 
 web:
 	@ikiwiki --setup ikiwiki.setup
