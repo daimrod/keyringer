@@ -538,7 +538,7 @@ function keyringer_show_actions {
 # Usage
 function keyringer_usage {
   # are we're using an `ls` that supports `--color`?
-  if ls --version 2>/dev/null; then
+  if ls --version > /dev/null 2>&1; then
     local keyrings="$(ls --color=never `dirname $CONFIG` | sed -e 's/config//' | xargs)"
   else
     local keyrings="$(ls `dirname $CONFIG` | sed -e 's/config//' | xargs)"
