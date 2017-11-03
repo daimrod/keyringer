@@ -43,7 +43,7 @@ Push everything:
 
 Build the package from the debian Git branch:
 
-    git-buildpackage
+    gbp buildpackage
 
 Run lintian (or [add it to your pbuilder hooks](http://askubuntu.com/questions/140697/how-do-i-run-lintian-from-pbuilder-dist)):
 
@@ -60,7 +60,7 @@ Cleanup symlink:
 
 Notes:
 
-* `git-import-orig` takes care of running `pristine-tar commit`, of merging of the tag and orig tarball into the upstream branch, and then it merges the result into the debian branch. With the above configuration, it also runs git-dch to do the bulk of the work in `debian/changelog`.
+* `gbp import-orig` takes care of running `pristine-tar commit`, of merging of the tag and orig tarball into the upstream branch, and then it merges the result into the debian branch. With the above configuration, it also runs git-dch to do the bulk of the work in `debian/changelog`.
 * To build a development package, checkout the debian branch, merge master, run `git-dch --auto --snapshot` and build.
 
 Packaging workflow
