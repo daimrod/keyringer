@@ -6,7 +6,6 @@
 # Load functions
 LIB="`dirname $0`/../functions"
 source "$LIB" readwrite $* || exit 1
-exit
 
 # Get file
 keyringer_get_file "$2"
