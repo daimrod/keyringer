@@ -32,4 +32,4 @@ elif [ ! -z "$SIZE" ] && ! echo $SIZE | egrep -q '^[0-9]+$'; then
 fi
 
 # Encrypt and store a randomly-generated secret
-keyringer_pwgen $SIZE | keyringer_exec encrypt "$BASEDIR" "$FILE"
+keyringer_pwgen $SIZE | keyringer_exec encrypt-batch "$BASEDIR" "$FILE" && echo "Secret generated and stored."

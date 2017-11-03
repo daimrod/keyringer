@@ -293,7 +293,7 @@ function keyringer_set_env {
   fi
 
   # Avoid viminfo, see https://keyringer.pw/trac/ticket/50
-  if $EDITOR --help | grep -q -e "^VIM"; then
+  if $EDITOR --help 2>&1 | grep -q -e "^VIM"; then
     if ! echo $EDITOR | grep -q -- "-i NONE"; then
       EDITOR="$EDITOR -S $SHARE/editors/vim"
     fi
@@ -537,7 +537,12 @@ function keyringer_show_actions {
 
 # Usage
 function keyringer_usage {
-  local keyrings="$(ls --color=never `dirname $CONFIG` | sed -e 's/config//' | xargs)"
+  # are we're using an `ls` that supports `--color`?
+  if ls --version > /dev/null 2>&1; then
+    local keyrings="$(ls --color=never `dirname $CONFIG` | sed -e 's/config//' | xargs)"
+  else
+    local keyrings="$(ls `dirname $CONFIG` | sed -e 's/config//' | xargs)"
+  fi
 
   printf "Keyringer $KEYRINGER_VERSION\n"
   printf "Usage: keyringer <keyring> <action> [arguments]\n\n"
@@ -552,7 +557,9 @@ function keyringer_usage {
   if [ ! -z "$keyrings" ] && [ -z "$1" ]; then
     printf "\tinit <path> [remote]\n" $BASENAME
   fi
-  keyringer_show_actions | sed -e 's/^/\t/'
+  # \t is a GNU extension
+  # https://stackoverflow.com/questions/8400602/sed-replace-literal-tab
+  keyringer_show_actions | sed -e "`printf 's/^/\t/'`"
   printf "\n"
 }
 

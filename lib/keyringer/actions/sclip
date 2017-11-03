@@ -13,12 +13,14 @@ keyringer $KEYRING xclip $*
 
 # Se window switch combo
 if [ -z "$XDOTOOL_NEXT_WINDOW" ]; then
-  XDOTOOL_NEXT_WINDOW="alt+Tab"
+  XDOTOOL_NEXT_WINDOW="Alt_L+Tab"
 fi
 
 # Move to the next window
 if which xdotool &> /dev/null; then
-  xdotool key $XDOTOOL_NEXT_WINDOW
+  # Use a smaller delay otherwise the window
+  # manager might ignore the key combo
+  xdotool key --delay 2 $XDOTOOL_NEXT_WINDOW
 fi
 
 # Sleep

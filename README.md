@@ -1,1 +1,1 @@
-index.mdwn
+index.md

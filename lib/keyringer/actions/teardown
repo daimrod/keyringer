@@ -16,8 +16,9 @@ if [ -z "$CONFIRM" ] || [ "$CONFIRM" != "-y" ]; then
   echo "WARNING: This will irrevocably destroy $KEYDIR"
   echo "WARNING: the action cannot be undone!"
 
-  read -rep "Are you sure to WIPE keyring $KEYRING (type YES to confirm)? " key
+  read -rep "Are you sure to WIPE keyring $KEYRING (type uppercase YES to confirm)? " key
   if [ "$key" != "YES" ]; then
+    echo "CANCELLED!"
     exit 1
   fi
 fi
