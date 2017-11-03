@@ -77,7 +77,7 @@ release:
 
 debian:
 	git checkout debian
-	git-import-orig --upstream-vcs-tag=$(VERSION) $(ARCHIVE)/keyringer-$(VERSION).tar.bz2
+	gbp import-orig --upstream-vcs-tag=$(VERSION) $(ARCHIVE)/keyringer-$(VERSION).tar.bz2
 	# Fine tune debian/changelog prepared by git-dch
 	dch -e
 	git commit -a -m "Updating debian/changelog"
