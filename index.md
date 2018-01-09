@@ -6,7 +6,8 @@ commands to encrypt, decrypt, recrypt, create key pairs, etc.
 - Project page: [https://keyringer.pw](https://keyringer.pw)
 - Manpage: [keyringer.1](share/man/keyringer.1)
 - License: [GPLv3+](LICENSE)
-- Issue tracker: [https://keyringer.pw/trac](https://keyringer.pw/trac)
+- Current issue tracker: `TODO.csv` from repository (please consider helping me migrate to bugs-everywhere or a `TODO.md`).
+- Archived issue tracker: [https://keyringer.pw/trac](https://keyringer.pw/trac)
 - Tor hidden service: [http://4qt45wbulqipigwa.onion](http://4qt45wbulqipigwa.onion)
 - Releases: [https://keyringer.pw/releases](releases)
 - Contact: rhatto at riseup.net
