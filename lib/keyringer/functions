@@ -161,7 +161,7 @@ function keyringer_set_tmpfile {
   if [ -z "$1" ]; then
     template="$tmp/keyringer.XXXXXXXXXX"
   else
-    template="$tmp/XXXXXXXXXX.$1"
+    template="$tmp/keyringer.$1.XXXXXXXXXX"
   fi
 
   mkdir -p "$tmp"
