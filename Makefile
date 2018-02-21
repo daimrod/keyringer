@@ -17,6 +17,7 @@
 PACKAGE  = keyringer
 VERSION  = $(shell ./keyringer | head -n 1 | cut -d ' ' -f 2)
 PREFIX  ?= /usr/local
+MANDIR	?=$(PREFIX)/share/man
 ARCHIVE ?= tarballs
 INSTALL  = /usr/bin/install
 
@@ -38,7 +39,7 @@ install_doc:
 	$(INSTALL) -D --mode=0644 LICENSE $(DESTDIR)/$(PREFIX)/share/doc/$(PACKAGE)/LICENSE
 
 install_man:
-	$(INSTALL) -D --mode=0644 share/man/keyringer.1 $(DESTDIR)/$(PREFIX)/share/man/man1/keyringer.1
+	$(INSTALL) -D --mode=0644 share/man/keyringer.1 $(DESTDIR)/$(MANDIR)/man1/keyringer.1
 
 install_completion:
 	$(INSTALL) -D --mode=0644 lib/keyringer/completions/bash/keyringer $(DESTDIR)/$(PREFIX)/share/bash-completion/completions/keyringer
