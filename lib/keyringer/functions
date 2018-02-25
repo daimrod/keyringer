@@ -194,9 +194,13 @@ function keyringer_shred {
 
   # Get shred implementation
   if which wipe &> /dev/null; then
-    tool="wipe"
+      tool="wipe"
   elif which shred &> /dev/null; then
-    tool="shred"
+      tool="shred"
+  elif which gshred &> /dev/null; then
+      tool="gshred"
+  elif _F=$(mktemp); rm -P "${_F}" >/dev/null 2>/dev/null ; then
+      tool="rm -P"
   else
     # Worst implementation
     message="WARNING $message"
@@ -206,13 +210,13 @@ function keyringer_shred {
   echo "$message $path using $tool..."
 
   if [ -d "$path" ]; then
-    if [ "$tool" == "wipe" ] || [ "$tool" == "rm" ]; then
+    if [ "$tool" == "wipe" ] || [ "$tool" == "rm" ] || [ "$tool" == "rm -P" ]; then
       $tool -rf $path
     else
       find $path -exec $tool -uf {} \;
     fi
   else
-    if [ "$tool" == "wipe" ] || [ "$tool" == "rm" ]; then
+    if [ "$tool" == "wipe" ] || [ "$tool" == "rm" ] || [ "$tool" == "rm -P" ]; then
       $tool -f "$path"
     else
       $tool -uf "$path"
