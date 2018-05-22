@@ -188,3 +188,13 @@ new [description:"(bw)Is#59 - Hidden service howto .. https:\/\/keyringer.pw\/tr
 time 1527005932
 new [description:"(bw)Is#67 - Document tips .. https:\/\/keyringer.pw\/trac\/ticket\/67" entry:"1527005932" modified:"1527005932" priority:"L" project:"keyringer" status:"pending" traccomponent:"usability" tracnumber:"67" tracsummary:"Document tips" tracurl:"https:\/\/keyringer.pw\/trac\/ticket\/67" uuid:"e45c7e62-d550-437d-9393-b9944220cb67"]
 ---
+time 1527010212
+new [description:"OpenBSD patches" entry:"1527010212" modified:"1527010212" project:"keyringer" status:"pending" tags:"important" uuid:"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"]
+---
+time 1527010445
+old [description:"OpenBSD patches" entry:"1527010212" modified:"1527010212" project:"keyringer" status:"pending" tags:"important" uuid:"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"]
+new [description:"Merge OpenBSD patches" entry:"1527010212" modified:"1527010445" project:"keyringer" status:"pending" tags:"important" uuid:"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"]
+---
+time 1527010498
+new [description:"Build static HTML report from taskwarrior" entry:"1527010498" modified:"1527010498" project:"keyringer" status:"pending" uuid:"5a63f746-48b2-4a16-a61b-81e8bcaeae27"]
+---
