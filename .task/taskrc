@@ -1,0 +1,12 @@
+# Main
+data.location=/PATH/TO/keyringer/.task
+
+# Trac
+uda.tracurl.type=string
+uda.tracurl.label=Trac URL
+uda.tracnumber.type=numeric
+uda.tracnumber.label=Trac Number
+uda.traccomponent.type=string
+uda.traccomponent.label=Trac Component
+uda.tracsummary.type=string
+uda.tracsummary.label=Trac Summary

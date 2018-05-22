@@ -1,0 +1,13 @@
+[general]
+taskrc  = /PATH/TO/keyringer/.taskrc
+targets = keyringer
+
+[keyringer]
+service                   = trac
+trac.base_uri             = keyringer.pw/trac
+trac.scheme               = https
+trac.username             = rhatto
+trac.password             = BUGMEPLEASE
+#trac.no_xmlrpc           = true
+trac.project_template     = keyringer.{{traccomponent}}
+trac.description.template = {{tracsummary}}
