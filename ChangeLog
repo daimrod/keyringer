@@ -1,3 +1,7 @@
+2017-11-23 - unreleased - Silvio Rhatto <rhatto@riseup.net>
+
+	Automatically generate passphrase at genkeys_gpg
+
 2017-11-03 - 0.5.2 - Silvio Rhatto <rhatto@riseup.net>
 
 	Fixed incorrect exit statement on append, thanks jamie (#79)

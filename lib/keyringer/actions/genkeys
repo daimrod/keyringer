@@ -34,23 +34,25 @@ function genkeys_ssh {
 function genkeys_gpg {
   echo "Make sure that $KEYDIR is atop of an encrypted volume."
 
-  passphrase="no"
-  passphrase_confirm="confirm"
+  #passphrase="no"
+  #passphrase_confirm="confirm"
 
-  while [ "$passphrase" != "$passphrase_confirm" ]; do
-    read -s -p "Enter password for the private key: " passphrase
-    printf "\n"
-    read -s -p "Enter password again: " passphrase_confirm
-    printf "\n"
+  #while [ "$passphrase" != "$passphrase_confirm" ]; do
+  #  read -s -p "Enter password for the private key: " passphrase
+  #  printf "\n"
+  #  read -s -p "Enter password again: " passphrase_confirm
+  #  printf "\n"
 
-    if [ "$passphrase" != "$passphrase_confirm" ]; then
-      echo "Password don't match."
-    fi
-  done
+  #  if [ "$passphrase" != "$passphrase_confirm" ]; then
+  #    echo "Password don't match."
+  #  fi
+  #done
+
+  keyringer_exec pwgen "$BASEDIR" "$FILE.passwd"
+  passphrase="`keyringer_exec decrypt "$BASEDIR" "$FILE.passwd"`"
 
   # TODO: insert random bytes
   # TODO: custom Name-Comment and Name-Email
-  # TODO: allow for empty passphrases
   $GPG --homedir "$TMPWORK" --gen-key --batch <<EOF
     Key-Type: RSA
     Key-Length: 4096
@@ -68,8 +70,8 @@ EOF
   $GPG --armor --homedir "$TMPWORK" --export-secret-keys | keyringer_exec encrypt "$BASEDIR" "$FILE"
   echo "Encrypting public key into keyringer..."
   $GPG --armor --homedir "$TMPWORK" --export             | keyringer_exec encrypt "$BASEDIR" "$FILE.pub"
-  echo "Encrypting passphrase into keyringer..."
-  echo "Passphrase for $FILE: $passphrase"               | keyringer_exec encrypt "$BASEDIR" "$FILE.passwd"
+  #echo "Encrypting passphrase into keyringer..."
+  #echo "Passphrase for $FILE: $passphrase"               | keyringer_exec encrypt "$BASEDIR" "$FILE.passwd"
 
   if [ ! -z "$OUTFILE" ]; then
     mkdir -p `dirname $OUTFILE`
