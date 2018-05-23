@@ -2,6 +2,8 @@
 
 	Automatically generate passphrase at genkeys_gpg
 
+	Increase default password size at pwgen
+
 2017-11-03 - 0.5.2 - Silvio Rhatto <rhatto@riseup.net>
 
 	Fixed incorrect exit statement on append, thanks jamie (#79)
