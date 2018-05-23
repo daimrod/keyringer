@@ -13,7 +13,7 @@ FILE="$2"
 
 # Generates a random passphrase
 function keyringer_pwgen {
-  ENTROPY_BYTES=${1:-20} # in bytes
+  ENTROPY_BYTES=${1:-40} # in bytes
   ENTROPY_SOURCE="${ENTROPY_SOURCE:-/dev/urandom}"
 
   # Strip possible newlines if output is wrapped.
