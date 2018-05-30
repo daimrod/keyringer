@@ -1,4 +1,26 @@
 2017-11-23 - unreleased - Silvio Rhatto <rhatto@riseup.net>
+													Grégoire Jadi <gjadi@omecha.info>
+													Jérémie Courrèges-Anglas <jca@wxcvbn.org>
+
+	Add MANDIR variable and use it
+	(patch thanks to Grégoire Jadi and
+	testing/discussion thanks also to Jérémie Courrèges-Anglas)
+
+	Replace install --mode=MODE by install -m MODE
+	(patch thanks to Grégoire Jadi and
+	testing/discussion thanks also to Jérémie Courrèges-Anglas)
+
+	Replace head -c by dd at pwgen
+	(patch thanks to Grégoire Jadi and
+	testing/discussion thanks also to Jérémie Courrèges-Anglas)
+
+	Fix mktemp template for POSIX.1 mktemp
+	(patch thanks to Grégoire Jadi and
+	testing/discussion thanks also to Jérémie Courrèges-Anglas)
+
+	Add support to "gshred" and "rm -P" to safely delete a file
+	(patch thanks to Grégoire Jadi and
+	testing/discussion thanks also to Jérémie Courrèges-Anglas)
 
 	Automatically generate passphrase at genkeys_gpg
 
