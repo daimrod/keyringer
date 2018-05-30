@@ -218,7 +218,7 @@ function keyringer_shred {
       $tool -rf $path
     else
       find $path -type f -exec $tool -uf {} \;
-      find -d $path -type d -exec rmdir {} \;
+      find $path -depth -type d -exec rmdir {} \;
     fi
   else
     if [ "$tool" == "wipe" ] || [ "$tool" == "rm" ] || [ "$tool" == "rm -P" ]; then
