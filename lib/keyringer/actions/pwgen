@@ -18,7 +18,7 @@ function keyringer_pwgen {
 
   # Strip possible newlines if output is wrapped.
   # Also strip trailing = signs as they add nothing to the password's entropy.
-  dd bs=1 count=$ENTROPY_BYTES if=$ENTROPY_SOURCE | base64 | tr -d '\n='
+  dd bs=1 count=$ENTROPY_BYTES if=$ENTROPY_SOURCE status=none | base64 | tr -d '\n='
   echo
 }
 
