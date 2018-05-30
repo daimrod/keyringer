@@ -192,20 +192,24 @@ function keyringer_shred {
     return
   fi
 
+  # Create our test target
+  _F="$(mktemp)"
+
   # Get shred implementation
   if which wipe &> /dev/null; then
     tool="wipe"
   elif which shred &> /dev/null; then
     tool="shred"
-  elif which gshred &> /dev/null; then
-    tool="gshred"
-  elif _F=$(mktemp); rm -P "${_F}" &> /dev/null; then
+  elif rm -P "${_F}" &> /dev/null; then
     tool="rm -P"
   else
     # Worst implementation
     message="WARNING $message"
     tool="rm"
   fi
+
+  # Cleanup in case "rm -P" is never called or -P flag is unsupported
+  rm -f "${_F}"
 
   echo "$message $path using $tool..."
 
