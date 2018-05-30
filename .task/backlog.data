@@ -60,3 +60,9 @@
 {"description":"OpenBSD patches","entry":"20180522T173012Z","modified":"20180522T173012Z","project":"keyringer","status":"pending","tags":["important"],"uuid":"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"}
 {"description":"Merge OpenBSD patches","entry":"20180522T173012Z","modified":"20180522T173405Z","project":"keyringer","status":"pending","tags":["important"],"uuid":"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"}
 {"description":"Build static HTML report from taskwarrior","entry":"20180522T173458Z","modified":"20180522T173458Z","project":"keyringer","status":"pending","uuid":"5a63f746-48b2-4a16-a61b-81e8bcaeae27"}
+{"description":"Merge OpenBSD patches","entry":"20180522T173012Z","modified":"20180530T144007Z","project":"keyringer","start":"20180530T144007Z","status":"pending","tags":["important"],"uuid":"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"}
+{"description":"Merge OpenBSD patches","entry":"20180522T173012Z","modified":"20180530T171635Z","project":"keyringer","status":"pending","tags":["important"],"uuid":"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"}
+{"description":"Merge OpenBSD patches","entry":"20180522T173012Z","modified":"20180530T173526Z","project":"keyringer","status":"pending","uuid":"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"}
+{"description":"Merge OpenBSD patches","entry":"20180522T173012Z","modified":"20180530T173542Z","project":"keyringer","status":"pending","tags":["important"],"uuid":"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"}
+{"description":"Merge OpenBSD patches","entry":"20180522T173012Z","modified":"20180530T173559Z","project":"keyringer","status":"pending","uuid":"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"}
+{"description":"Merge OpenBSD patches","end":"20180530T174450Z","entry":"20180522T173012Z","modified":"20180530T174450Z","project":"keyringer","status":"completed","uuid":"01592365-2285-4c2e-8ee6-2fcc61eaa5b2"}

@@ -1,6 +1,10 @@
-2017-11-23 - unreleased - Silvio Rhatto <rhatto@riseup.net>
-													Grégoire Jadi <gjadi@omecha.info>
-													Jérémie Courrèges-Anglas <jca@wxcvbn.org>
+2017-11-23 - 0.5.3 - Silvio Rhatto <rhatto@riseup.net>
+										 Grégoire Jadi <gjadi@omecha.info>
+										 Jérémie Courrèges-Anglas <jca@wxcvbn.org>
+
+	Clean empty directories once the files are removed with shred
+	(patch thanks to Grégoire Jadi and
+	testing/discussion thanks also to Jérémie Courrèges-Anglas)
 
 	Add MANDIR variable and use it
 	(patch thanks to Grégoire Jadi and
