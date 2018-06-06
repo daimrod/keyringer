@@ -52,7 +52,7 @@ function genkeys_gpg {
   passphrase="`keyringer_exec decrypt "$BASEDIR" "$FILE.passwd"`"
 
   # TODO: insert random bytes
-  # TODO: custom Name-Comment and Name-Email
+  # TODO: custom Name-Email
   $GPG --homedir "$TMPWORK" --gen-key --batch <<EOF
     Key-Type: RSA
     Key-Length: 4096
