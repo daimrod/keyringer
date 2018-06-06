@@ -66,8 +66,11 @@ function genkeys_gpg {
 EOF
 
   # Encrypt the result
+  # See https://superuser.com/questions/1135812/gpg2-asking-for-passphrase-when-importing-secret-keys#1135950
+  #     https://stackoverflow.com/questions/49072403/suppress-the-passphrase-prompt-in-gpg-command
+  #     https://dev.gnupg.org/T2313
   echo "Encrypting secret key into keyringer..."
-  $GPG --armor --homedir "$TMPWORK" --export-secret-keys | keyringer_exec encrypt "$BASEDIR" "$FILE"
+  echo -e "${passphrase}\n" | $GPG --armor --homedir "$TMPWORK" --passphrase-fd 0 --batch --no-tty --pinentry-mode=loopback --export-secret-keys | keyringer_exec encrypt "$BASEDIR" "$FILE"
   echo "Encrypting public key into keyringer..."
   $GPG --armor --homedir "$TMPWORK" --export             | keyringer_exec encrypt "$BASEDIR" "$FILE.pub"
   #echo "Encrypting passphrase into keyringer..."
@@ -76,8 +79,8 @@ EOF
   if [ ! -z "$OUTFILE" ]; then
     mkdir -p `dirname $OUTFILE`
     printf "Saving copies at %s and %s.pub\n" "$OUTFILE" "$OUTFILE"
-    $GPG --armor --homedir "$TMPWORK" --export-secret-keys > "$OUTFILE"
-    $GPG --armor --homedir "$TMPWORK" --export             > "$OUTFILE.pub"
+    echo -e "${passphrase}\n" | $GPG --armor --homedir "$TMPWORK" --passphrase-fd 0 --batch --no-tty --pinentry-mode=loopback --export-secret-keys > "$OUTFILE"
+    $GPG --armor --homedir "$TMPWORK" --export > "$OUTFILE.pub"
   fi
 
   echo "Done"

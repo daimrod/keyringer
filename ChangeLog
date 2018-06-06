@@ -1,4 +1,8 @@
-2017-11-23 - 0.5.3 - Silvio Rhatto <rhatto@riseup.net>
+2010-06-06 - unreleased - Silvio Rhatto <rhatto@riseup.net>
+
+	Fix passphrase entry at genpairs when exporting secret keys
+
+2018-05-30 - 0.5.3 - Silvio Rhatto <rhatto@riseup.net>
 										 Grégoire Jadi <gjadi@omecha.info>
 										 Jérémie Courrèges-Anglas <jca@wxcvbn.org>
 
