@@ -1,4 +1,6 @@
-2010-06-06 - unreleased - Silvio Rhatto <rhatto@riseup.net>
+2010-06-16 - unreleased - Silvio Rhatto <rhatto@riseup.net>
+
+	Adds history support at shell action
 
 	Fix passphrase entry at genpairs when exporting secret keys
 

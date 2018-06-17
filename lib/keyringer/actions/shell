@@ -15,6 +15,8 @@ keyringer_usage $KEYRING
 
 # While a "quit" command isn't entered, read STDIN
 while read -rep "keyringer:/${KEYRING}${SHELLPATH}> " STDIN; do
+  history -s "$STDIN"
+
   if [ "$STDIN" == "quit" ] || [ "$STDIN" == "exit" ] || [ "$STDIN" == "bye" ]; then
     break
   elif [ "$STDIN" == "shell" ]; then
