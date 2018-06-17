@@ -85,7 +85,7 @@ debian:
 	gbp buildpackage --git-tag-only --git-sign-tags
 
 web:
-	@ikiwiki --setup ikiwiki.setup
+	@ikiwiki --setup ikiwiki.yaml
 
 web_deploy:
 	@rsync -avz --delete www/ blog:/var/sites/keyringer/www/
