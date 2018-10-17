@@ -1,4 +1,6 @@
-2010-06-16 - unreleased - Silvio Rhatto <rhatto@riseup.net>
+2018-10-17 - unreleased - Silvio Rhatto <rhatto@riseup.net>
+
+	Fixes BASEDIR evaluation at init action
 
 	Adds history support at shell action
 

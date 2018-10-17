@@ -93,7 +93,7 @@ function keyringer_init {
   fi
 
   # Reparse basedir to force absolute folder
-  BASEDIR="`cd $BASEDIR && pwd`"
+  BASEDIR="`cd $BASEDIR &> /dev/null && pwd`"
 
   # Add entry
   chmod 700 "$BASEDIR"
