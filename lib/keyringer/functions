@@ -314,9 +314,9 @@ function keyringer_set_env {
   fi
 
   if [ ! -z "$KEYID" ]; then
-    GPG="gpg --quiet -u $KEYID"
+    GPG="gpg --quiet --no-encrypt-to -u $KEYID"
   else
-    GPG="gpg --quiet"
+    GPG="gpg --quiet --no-encrypt-to"
   fi
 
   # Check keyring config version
