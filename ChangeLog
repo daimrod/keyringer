@@ -1,3 +1,7 @@
+2019-03-25 - Silvio Rhatto <rhatto@riseup.net>
+
+	Adds COMMIT_AFTER_ENCRYPT setting
+
 2019-01-29 - 0.5.4 - Silvio Rhatto <rhatto@riseup.net>
 
 	Use --no-encrypt-to GnuPG option to strictly respect the recipients file

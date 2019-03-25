@@ -124,5 +124,10 @@ if [ -d "$BASEDIR/.git" ]; then
   keyringer_exec git "$BASEDIR" add "keys/$FILE"
 fi
 
+# Optional commit depending on the value of this setting
+if [ "$COMMIT_AFTER_ENCRYPT" == "yes" ]; then
+  keyringer_exec git "$BASEDIR" commit -m "Changes for $FILE"
+fi
+
 # Done
 exit "$?"
