@@ -126,7 +126,13 @@ fi
 
 # Optional commit depending on the value of this setting
 if [ "$COMMIT_AFTER_ENCRYPT" == "yes" ]; then
-  keyringer_exec git "$BASEDIR" commit -m "Changes for $FILE"
+  FILE="`echo $FILE | sed -e 's|/./||'`"
+  echo Changes for keys/$FILE | keyringer_exec git "$BASEDIR" commit -F -
+fi
+
+# Optional push depending on the value of this setting
+if [ "$PUSH_AFTER_ENCRYPT" == "yes" ]; then
+  keyringer_exec git "$BASEDIR" push
 fi
 
 # Done
