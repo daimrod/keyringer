@@ -6,6 +6,8 @@
 
 	Fix git parameter expansion
 
+	Fix secret name when encrypting a folder
+
 2019-01-29 - 0.5.4 - Silvio Rhatto <rhatto@riseup.net>
 
 	Use --no-encrypt-to GnuPG option to strictly respect the recipients file

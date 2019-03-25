@@ -95,9 +95,14 @@ if [ "$UNENCRYPTED_FILE" != "-" ] && [ -d "$UNENCRYPTED_FILE" ]; then
   # Time to go recursive
   BASEPATH="`basename $FILE .asc`"
   FILEPATH="`dirname "$UNENCRYPTED_FILE"`"
+
+  if [ "$FILEPATH" == "." ]; then
+    FILEPATH="$(cd `dirname "$UNENCRYPTED_FILE"` &> /dev/null & pwd)"
+  fi
+
   find $UNENCRYPTED_FILE | while read file; do
     if [ ! -d "$file" ]; then
-      dir="`dirname "$file" | sed -e "s|^$FILEPATH|$BASEPATH|g"`"
+      dir="`dirname "$file" | sed -e "s|^$UNENCRYPTED_FILE|$BASEPATH|" -e "s|^$FILEPATH|$BASEPATH|"`"
       keyringer_get_new_file `basename "$file"`
       keyringer_encrypt "$dir/$FILE" $file
     fi
