@@ -14,5 +14,5 @@ CWD="`pwd`"
 shift
 
 # Run git command
-mkdir -p "$BASEDIR" && cd "$BASEDIR" && git $*
+mkdir -p "$BASEDIR" && cd "$BASEDIR" && git "$@"
 cd "$CWD"
